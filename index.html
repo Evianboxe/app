@@ -176,6 +176,86 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,sans-serif
   cursor:pointer;margin-top:10px;width:100%}
 .share-btn svg{width:16px;height:16px;flex-shrink:0}
 
+/* ── Test Battery ── */
+.tb-wrap{padding:0 0 100px}
+.tb-header{padding:16px 16px 4px}
+.tb-title{font-size:18px;font-weight:900;color:#fff;margin-bottom:2px}
+.tb-sub{font-size:12px;color:#666;margin-bottom:12px}
+.tb-cat-bar{display:flex;gap:6px;padding:0 16px 10px;overflow-x:auto;scrollbar-width:none}
+.tb-cat-bar::-webkit-scrollbar{display:none}
+.tb-cat-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1.5px solid #333;background:#141414;color:#aaa;font-size:11px;font-weight:700;cursor:pointer;transition:.2s}
+.tb-cat-btn.active{background:var(--acc);border-color:var(--acc);color:#fff}
+.tb-ath-bar{display:flex;align-items:center;gap:8px;padding:0 16px 10px}
+.tb-ath-label{font-size:12px;color:#888;flex-shrink:0}
+.tb-ath-sel{flex:1;background:#141414;border:1px solid #333;color:#fff;border-radius:8px;padding:6px 10px;font-size:13px}
+.tb-card{margin:0 14px 12px;background:#141414;border-radius:14px;overflow:hidden;border:1px solid #1e1e1e}
+.tb-card-hdr{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;user-select:none}
+.tb-cat-badge{font-size:10px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:20px;text-transform:uppercase}
+.tb-cat-badge.salto{background:#1a2a4a;color:#7ec8ff}
+.tb-cat-badge.corrida{background:#1a3a1a;color:#6edd6e}
+.tb-cat-badge.ring{background:#3a1a1a;color:#ff8080}
+.tb-cat-badge.forca{background:#2a1a3a;color:#cc99ff}
+.tb-card-name{flex:1;font-size:13px;font-weight:800;color:#fff}
+.tb-card-unit{font-size:11px;color:#555;margin-right:6px}
+.tb-last-val{font-size:13px;font-weight:700;color:var(--acc)}
+.tb-chevron{font-size:11px;color:#555;transition:.2s}
+.tb-card.open .tb-chevron{transform:rotate(180deg)}
+.tb-body{display:none;padding:0 14px 14px;border-top:1px solid #1e1e1e}
+.tb-card.open .tb-body{display:block}
+.tb-desc{font-size:12px;color:#888;margin:10px 0 8px;line-height:1.5}
+.tb-section-lbl{font-size:10px;font-weight:800;letter-spacing:.08em;color:#555;text-transform:uppercase;margin:12px 0 6px}
+.tb-materials{list-style:disc;padding-left:16px;margin:0 0 4px}
+.tb-materials li{font-size:12px;color:#aaa;margin-bottom:3px;line-height:1.4}
+.tb-step{display:flex;gap:8px;margin-bottom:6px}
+.tb-step-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--acc);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.tb-step-txt{font-size:12px;color:#ccc;line-height:1.5;padding-top:2px}
+.tb-norms{display:flex;flex-direction:column;gap:4px;margin:4px 0}
+.tb-norm{display:flex;align-items:center;gap:8px;font-size:11px;color:#aaa}
+.tb-norm-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tb-norm-range{font-weight:700;color:#fff;min-width:80px}
+.tb-tip{background:#111;border-left:3px solid var(--acc);padding:8px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#aaa;margin-top:8px;line-height:1.5}
+.tb-record{margin-top:12px;display:flex;gap:8px;align-items:center}
+.tb-record-input{flex:1;background:#0a0a0a;border:1.5px solid #333;color:#fff;border-radius:8px;padding:8px 12px;font-size:14px;font-weight:700}
+.tb-record-input:focus{border-color:var(--acc);outline:none}
+.tb-record-unit{font-size:11px;color:#555;flex-shrink:0}
+.tb-record-btn{background:var(--acc);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0}
+.tb-hist{margin-top:10px}
+.tb-hist-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #1a1a1a;font-size:12px}
+.tb-hist-date{color:#555}
+.tb-hist-val{color:#fff;font-weight:700}
+.tb-measure{font-size:12px;color:#aaa;font-style:italic;margin:4px 0 8px;line-height:1.4}
+/* Backup buttons */
+.backup-row{display:flex;gap:8px;margin-bottom:14px}
+.bk-btn{flex:1;padding:10px;border-radius:10px;border:1.5px solid #333;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:.2s}
+.bk-btn.export{background:#0a1a0a;border-color:#2d5a2d;color:#6edd6e}
+.bk-btn.import-bk{background:#0a0a1a;border-color:#2d2d5a;color:#7ec8ff}
+.bk-btn:hover{filter:brightness(1.2)}
+/* Test Battery — new form styles */
+.tb-section{margin:0 14px 14px;background:#141414;border-radius:14px;overflow:hidden;border:1px solid #1e1e1e;padding:0 0 6px}
+.tb-section-title{font-size:13px;font-weight:900;color:#fff;padding:12px 14px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #1e1e1e;margin-bottom:4px}
+.tb-section-icon{font-size:16px}
+.tb-field{padding:8px 14px 4px}
+.tb-field-top{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.tb-field-name{font-size:13px;font-weight:800;color:#fff;flex:1}
+.tb-field-proto{font-size:11px;color:#555;background:#0a0a0a;border:1px solid #222;border-radius:6px;padding:2px 7px}
+.tb-field-prev{font-size:11px;color:var(--acc);font-weight:700}
+.tb-field-hint{font-size:11px;color:#666;line-height:1.4;margin-bottom:6px}
+.tb-lift-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.tb-input-sm{width:72px;background:#0a0a0a;border:1.5px solid #333;color:#fff;border-radius:8px;padding:7px 10px;font-size:14px;font-weight:700;text-align:center}
+.tb-input-sm:focus,.tb-input-lg:focus{border-color:var(--acc);outline:none}
+.tb-input-lg{width:100px;background:#0a0a0a;border:1.5px solid #333;color:#fff;border-radius:8px;padding:7px 10px;font-size:14px;font-weight:700;text-align:center}
+.tb-x{font-size:14px;color:#555;font-weight:700}
+.tb-unit-lbl{font-size:12px;color:#666}
+.tb-1rm-badge{min-width:80px;background:#1a0005;border:1.5px solid #3a0010;color:#C41230;border-radius:8px;padding:6px 10px;font-size:12px;font-weight:800;text-align:center;transition:.2s}
+.tb-save-btn{width:100%;padding:14px;background:var(--acc);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:900;cursor:pointer;letter-spacing:.02em}
+.tb-save-btn:hover{background:#a30f28}
+.tb-hist-snap{margin:0 14px 10px;background:#0d0d0d;border-radius:10px;padding:10px 12px;border:1px solid #1e1e1e}
+.tb-hist-snap-date{font-size:11px;color:#555;font-weight:700;margin-bottom:6px}
+.tb-hist-snap-vals{display:flex;flex-wrap:wrap;gap:6px}
+.tb-hist-chip{display:inline-flex;align-items:center;gap:5px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:3px 8px;font-size:11px}
+.tb-chip-lbl{color:#666}
+.tb-empty-msg{padding:40px 20px;text-align:center;color:#666;font-size:13px;line-height:1.6}
+
 /* ── Brand logo ── */
 .brand-logo{height:36px;width:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #C41230}
 
@@ -1110,6 +1190,7 @@ function renderAEC() {
   <button class="cat-btn" onclick="switchCat('U12')">Sub 12</button>
   <button class="cat-btn" onclick="switchCat('PC')">Pequenos Campeões</button>
   <button class="cat-btn" onclick="switchCat('AEC')">AEC</button>
+  <button class="cat-btn" onclick="switchCat('TESTES')">🧪 Testes</button>
 </div>
 <div id="top-controls">
   <div class="tc-week">
@@ -4086,6 +4167,11 @@ function shareWhatsApp() {
 function renderHeader(day) {
   var dateStr = day.key ? getSessionDate(day.key, currentWeek) : '';
   var compBtn = day.key ? renderCompletionBtn(day.key, currentWeek) : '';
+  // Per le sessioni con circuito fisico (lun/mer/ven adulti), il pulsante invia il PDF del circuito
+  var isCircuitDay = day.key && SCHED && SCHED[day.key] && day.type !== 'recall' && day.type !== 'agonist';
+  var shareOnclick = isCircuitDay
+    ? `sharePDFWhatsApp('circuit','${day.key}',this)`
+    : `shareAsImage()`;
   return `
   <div class="day-header">
     <h1>${day.name}</h1>
@@ -4093,7 +4179,7 @@ function renderHeader(day) {
     ${dateStr ? `<div class="session-date">${dateStr}</div>` : ''}
     ${compBtn}
     <div class="accent-bar" style="background:${day.accent}"></div>
-    <button class="share-btn" onclick="shareAsImage()">
+    <button class="share-btn" onclick="${shareOnclick}">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Condividi allenamento
     </button>
@@ -4405,11 +4491,8 @@ function renderBlocks(blocks) {
 
 function renderGroup(day) {
   const ids = SCHED[day.key][currentWeek];
-  const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.301A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 01-4.341-1.285l-.31-.186-3.213.841.856-3.131-.204-.323A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>';
-  const circWaBtn = `<div class="pdf-btn-row"><button class="pdf-wa-btn" onclick="sharePDFWhatsApp('circuit','${day.key}')" title="Enviar PDF treino físico via WhatsApp">${waIcon} PDF Físico</button></div>`;
   return renderHeader(day)
     + renderFmtBar(day.fmt)
-    + circWaBtn
     + renderNeuro(day.neuro)
     + renderExercises(ids, day.accent)
     + renderFinisher();
@@ -4489,7 +4572,6 @@ function renderFriday(day) {
     if (SCHED[day.key]) {
       var fri_neuro = day.neuro || [{v:'G1',l:'Spec.'},{v:'G2',l:'Mov.'},{v:'G3',l:'Rit.'},{v:'G4',l:'Adatt.'}];
       var fri_ids = SCHED[day.key][currentWeek];
-      const waIconFri = '<svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.301A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 01-4.341-1.285l-.31-.186-3.213.841.856-3.131-.204-.323A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>';
       h += `<details class="bx-fase">
         <summary>
           <span class="bx-fase-icon">💪</span>
@@ -4498,7 +4580,6 @@ function renderFriday(day) {
           <span class="bx-fase-chevron">▼</span>
         </summary>
         <div class="bx-items" style="padding:8px 0">`;
-      h += `<div class="pdf-btn-row"><button class="pdf-wa-btn" onclick="sharePDFWhatsApp('circuit','${day.key}')" title="Enviar PDF treino físico via WhatsApp">${waIconFri} PDF Físico</button></div>`;
       h += renderNeuro(fri_neuro);
       h += renderExercises(fri_ids, day.accent);
       h += renderG4Selection(fri_ids, day.accent);
@@ -4765,7 +4846,7 @@ function renderPC() {
 function switchCat(cat) {
   currentCat = cat;
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  const catIdx = ['PREPUG','AGO','U12','PC','AEC'].indexOf(cat);
+  const catIdx = ['PREPUG','AGO','U12','PC','AEC','TESTES'].indexOf(cat);
   if (catIdx !== -1) document.querySelectorAll('.cat-btn')[catIdx].classList.add('active');
 
   const nav = document.getElementById('top-controls');
@@ -4813,6 +4894,10 @@ function switchCat(cat) {
     if (aecWeekEl) aecWeekEl.style.display = 'none';
     if (typeof aecTurma !== 'undefined') { aecTurma = 'A'; aecSem = 1; aecDia = 0; }
     document.getElementById('scroll-area').innerHTML = renderAEC();
+
+  } else if (cat === 'TESTES') {
+    nav.style.display = 'none';
+    document.getElementById('scroll-area').innerHTML = renderTestBattery();
 
   } else {
     // PREPUG (default): LUN/MER/GIO/VEN — hide MAR
@@ -5616,6 +5701,139 @@ function ptText(s) {
     ['Polpacci','Gémeos'],['hamstring','isquiotibiais'],['dorsali','dorsais'],
     ['Foam roller','Foam roller'],
     ['ring feeling','ring feeling'],
+    // ── Vocabolário agonista / boxe ──
+    // Frases longas primeiro
+    ['Sessione di mantenimento','Sessão de manutenção'],
+    ['sessione di mantenimento','sessão de manutenção'],
+    ['senza accumulare fatica','sem acumular fadiga'],
+    ["L'agonista deve arrivare al weekend","O atleta deve chegar ao fim de semana"],
+    ['Il venerdì mantiene il feeling del ring','A sexta-feira mantém o feeling do ring'],
+    ["l'agonista deve sentirsi fresco","o atleta deve sentir-se fresco"],
+    ['nessuno sforzo massimale','sem esforço máximo'],
+    ['Nessuno sforzo massimale','Sem esforço máximo'],
+    ['nessun sforzo massimale','sem esforço máximo'],
+    ['frequenza cardiaca','frequência cardíaca'],
+    ['Focus sulla meccanica','Foco na mecânica'],
+    ['Focus sul feeling','Foco no feeling'],
+    ['Focus sulla','Foco na'],['Focus sul','Foco no'],
+    ["uscita dall'asse",'saída do eixo'],
+    ['uscita laterale','saída lateral'],
+    ['Solo movimenti difensivi','Apenas movimentos defensivos'],
+    ['Nessun counter','Sem counter'],['nessun counter','sem counter'],
+    ['Fianchi allineati, no cedimento lombare','Ancas alinhadas, sem cedência lombar'],
+    ['non accumulo','sem acumulação'],
+    ['Lento e controllato','Lento e controlado'],
+    ['lento e controllato','lento e controlado'],
+    ['in sequenza lenta','em sequência lenta'],
+    ['Attivazione leggera','Ativação leve'],['attivazione leggera','ativação leve'],
+    ['Sessione di velocità','Sessão de velocidade'],
+    ['sessione di velocità','sessão de velocidade'],
+    ['Contatto medio','Contacto médio'],['contatto medio','contacto médio'],
+    ['Contatto leggero','Contacto leve'],['contatto leggero','contacto leve'],
+    ['corpo libero','peso corporal'],['Corpo libero','Peso corporal'],
+    ['pausa isometrica','pausa isométrica'],['Pausa isometrica','Pausa isométrica'],
+    ['partenza da zero','partida do zero'],
+    ['da piedi fermi','com os pés parados'],
+    ['nessuna pausa','sem pausa'],['Nessuna pausa','Sem pausa'],
+    ['resistenza crescente','resistência crescente'],
+    ['carico maggiore','carga maior'],['carico alto','carga alta'],
+    ['carico basso','carga baixa'],
+    ['volume ridotto','volume reduzido'],['volume massimo','volume máximo'],
+    ['serie massimale','série máxima'],
+    ['risalita assistita','subida assistida'],['risalita libera','subida livre'],
+    ['risalita esplosiva','subida explosiva'],
+    ['discesa assistita','descida assistida'],
+    ['a coppia','em par'],['a coppie','em pares'],
+    ['alternanza','alternância'],
+    ['in cima','no topo'],
+    ['testa e corpo','cabeça e corpo'],
+    ['passo indietro','passo atrás'],['passo avanti','passo à frente'],
+    ['step laterale','step lateral'],
+    ['piede sinistro','pé esquerdo'],['piede destro','pé direito'],
+    ['piede anteriore','pé anterior'],['piede posteriore','pé posterior'],
+    // Nomi esercizi
+    ['Rimbalzo in guardia + rotazioni spalle','Rebote em guarda + rotações ombros'],
+    ['Rimbalzo in guardia + rotazioni','Rebote em guarda + rotações'],
+    ['Rimbalzo in guardia','Rebote em guarda'],
+    ['Rimbalzo + shadow leggero','Rebote + shadow leve'],
+    ['Rimbalzo + rotazioni spalle','Rebote + rotações ombros'],
+    ['Rimbalzo + rotazioni','Rebote + rotações'],
+    ['Shadow boxing tecnico','Shadow boxing técnico'],
+    ['Shadow boxing difensivo','Shadow boxing defensivo'],
+    ['Shadow boxing libero','Shadow boxing livre'],
+    ['Shadow boxing tattico','Shadow boxing tático'],
+    ['Shadow boxing leggero','Shadow boxing leve'],
+    ['shadow boxing tecnico','shadow boxing técnico'],
+    ['shadow boxing difensivo','shadow boxing defensivo'],
+    ['shadow boxing libero','shadow boxing livre'],
+    ['shadow boxing tattico','shadow boxing tático'],
+    ['shadow boxing leggero','shadow boxing leve'],
+    ['Sacco — combo 1-2-3 tecnico','Saco — combo 1-2-3 técnico'],
+    ['Sacco tecnico leggero','Saco técnico leve'],
+    ['Sacco tecnico','Saco técnico'],['Sacco esplosivo','Saco explosivo'],
+    ['Sacco leggero','Saco leve'],['Sacco — ','Saco — '],
+    ['sacco tecnico','saco técnico'],['sacco leggero','saco leve'],
+    ['al sacco','ao saco'],
+    ['Plank laterale','Prancha lateral'],['Plank','Prancha'],['plank','prancha'],
+    ['Hip flexor — affondo statico','Hip flexor — afundo estático'],
+    ['affondo statico','afundo estático'],['affondo frontale','afundo frontal'],
+    ['Corda da salto leggera','Corda de salto leve'],
+    ['Corda da salto ritmo','Corda de salto ritmo'],
+    ['Corda da salto','Corda de salto'],['corda da salto','corda de salto'],
+    ['Good morning con barra vuota','Good morning com barra vazia'],
+    ['Good morning con barra','Good morning com barra'],
+    ['T-spine rotation su foam roller','Rotação T-spine em foam roller'],
+    ['T-spine rotation','Rotação T-spine'],
+    ['Attivazione in guardia','Ativação em guarda'],
+    ['Attivazione ritmica','Ativação rítmica'],
+    ['Attivazione neurale','Ativação neural'],
+    ['attivazione ritmica','ativação rítmica'],['attivazione neurale','ativação neural'],
+    ['Attivazione — cerchio in movimento','Ativação — círculo em movimento'],
+    ['Neurologia — ','Neurologia — '],
+    ['Pad work intenso','Pad work intenso'],['Pad work leggero','Pad work leve'],
+    ['Pad work — ','Pad work — '],['pad work','pad work'],
+    // Tags circuito
+    ['Spinta orizz.','Empurre Horiz.'],['Spinta vert.','Empurre Vert.'],
+    ['Tirata','Puxada'],['Squat','Agachamento'],
+    // Parole singole
+    ['Rimbalzo','Rebote'],['rimbalzo','rebote'],
+    ['Attivazione','Ativação'],['attivazione','ativação'],
+    ['rotazioni','rotações'],['rotazione','rotação'],
+    ['sequenza','sequência'],['in sequenza','em sequência'],
+    ['meccanica','mecânica'],
+    ['uscita','saída'],
+    ['Contatto','Contacto'],['contatto','contacto'],
+    ['cedimento','cedência'],
+    ['mantenimento','manutenção'],
+    ['sforzo','esforço'],
+    ['affondo','afundo'],
+    ['difensivo','defensivo'],['difensiva','defensiva'],
+    ['Leggero','Leve'],['Leggera','Leve'],['Leggeri','Leves'],
+    ['Pesante','Pesado'],['Pesanti','Pesados'],
+    ['sessione','sessão'],
+    ['accumulo','acumulação'],
+    ['allineati','alinhados'],['allineate','alinhadas'],
+    ['asse','eixo'],
+    ['Sacco','Saco'],['sacco','saco'],
+    ['tecnico','técnico'],
+    ['tattico','tático'],['tattica','tática'],
+    ['esplosivo','explosivo'],['esplosiva','explosiva'],
+    ['esecuzione','execução'],
+    ['elastica','elástica'],['elastico','elástico'],
+    ['percorso','percurso'],
+    ['spontaneo','espontâneo'],['spontanea','espontânea'],
+    ['fluidità','fluidez'],
+    ['immediato','imediato'],['immediata','imediata'],
+    ['laterale','lateral'],
+    ['verticale','vertical'],['orizzontale','horizontal'],
+    ['completo','completo'],['completa','completa'],
+    ['agonista','atleta'],
+    ['venerdì','sexta-feira'],['martedì','terça-feira'],
+    ['weekend','fim de semana'],
+    ['poi','depois'],['Poi','Depois'],
+    ['ogni','cada'],['Ogni','Cada'],
+    ['prima','antes'],
+    ['dopo','depois'],
   ];
   var r = s;
   pairs.forEach(function(p){ r = r.split(p[0]).join(p[1]); });
@@ -5747,13 +5965,13 @@ function generateCircuitPDF(dayKey, shareMode) {
 
     // Name
     doc.setFontSize(9.5); doc.setFont('helvetica', 'bold'); doc.setTextColor(20,20,20);
-    var nameLines = doc.splitTextToSize(ex.name, cw * 0.65);
+    var nameLines = doc.splitTextToSize(ptText(ex.name), cw * 0.65);
     nameLines.forEach(function(l, li) {
       doc.text(l, margin + 11, y + li * lh);
     });
     // Tag
     doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(RED[0], RED[1], RED[2]);
-    doc.text(ex.tag || '', pageW - margin - 2, y, { align: 'right' });
+    doc.text(ptText(ex.tag || ''), pageW - margin - 2, y, { align: 'right' });
     y += nameLines.length * lh + 1;
 
     // Note
@@ -5799,8 +6017,8 @@ function generateCircuitPDF(dayKey, shareMode) {
 /* ══════════════════════════════════════════
    SHARE PDF VIA WHATSAPP (Web Share API)
    ══════════════════════════════════════════ */
-async function sharePDFWhatsApp(type, dayKey) {
-  var btn = document.querySelector('.pdf-wa-btn');
+async function sharePDFWhatsApp(type, dayKey, btnEl) {
+  var btn = btnEl || document.querySelector('.pdf-wa-btn') || document.querySelector('.share-btn');
   var origHtml = btn ? btn.innerHTML : '';
   if (btn) { btn.disabled = true; btn.textContent = 'A gerar...'; }
 
@@ -5988,7 +6206,7 @@ function generateSessionPDF(dayKey, shareMode) {
       // Nome + séries
       doc.setFontSize(9.5); doc.setFont('helvetica', 'bold'); doc.setTextColor(20,20,20);
       var nameW = cw * 0.60;
-      var nameLines = doc.splitTextToSize('• ' + ex.name, nameW);
+      var nameLines = doc.splitTextToSize('• ' + ptText(ex.name), nameW);
       nameLines.forEach(function(l,i){
         doc.text(l, margin+2, y);
         if (i===0 && setsDisplay) {
@@ -7012,6 +7230,466 @@ function doImport() {
   }
 }
 
+/* ══════════════════════════════════════════
+   BACKUP COMPLETO — EXPORT / IMPORT JSON
+   ══════════════════════════════════════════ */
+function exportAllData() {
+  var data = {
+    _version: 2,
+    _date: new Date().toISOString(),
+    athletes: getAthletes(),
+    active_ath: localStorage.getItem('evian_active_ath') || '',
+    massimali: JSON.parse(localStorage.getItem('evian_massimali') || '{}'),
+    cal_events: JSON.parse(localStorage.getItem('evian_cal_events') || '[]'),
+    test_log: getAthTestLog(),
+  };
+  var json = JSON.stringify(data, null, 2);
+  var blob = new Blob([json], {type: 'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'evian-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+}
+
+function importAllData() {
+  var input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json,application/json';
+  input.onchange = function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        var data = JSON.parse(ev.target.result);
+        if (!data.athletes) throw new Error('File non valido');
+        var n = data.athletes.length;
+        if (!confirm('Importare backup con ' + n + ' atleti? I dati attuali verranno SOSTITUITI.')) return;
+        saveAthletes(data.athletes);
+        if (data.active_ath) localStorage.setItem('evian_active_ath', data.active_ath);
+        if (data.massimali) localStorage.setItem('evian_massimali', JSON.stringify(data.massimali));
+        if (data.cal_events) localStorage.setItem('evian_cal_events', JSON.stringify(data.cal_events));
+        if (data.test_log) localStorage.setItem('evian_test_log', JSON.stringify(data.test_log));
+        alert('✅ Backup importato! ' + n + ' atleti ripristinati.');
+        renderAthPanelContent();
+      } catch(err) {
+        alert('Errore nel file: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+/* Aggiunge backup buttons al pannello import */
+function renderAthImportPanel() {
+  return '<div class="ath-import">'
+    + '<h3>💾 Backup completo</h3>'
+    + '<p style="font-size:12px;color:#888;margin-bottom:12px">Esporta tutti i dati atleti in un file JSON da conservare sul tuo telefono o PC. Importalo dopo ogni aggiornamento dell\'app per non perdere nulla.</p>'
+    + '<div class="backup-row">'
+    + '<button class="bk-btn export" onclick="exportAllData()"><span style="font-size:20px">📤</span><span>Esporta backup</span></button>'
+    + '<button class="bk-btn import-bk" onclick="importAllData()"><span style="font-size:20px">📥</span><span>Importa backup</span></button>'
+    + '</div>'
+    + '<hr style="border-color:#1a1a1a;margin:16px 0">'
+    + '<h3>📲 Importa singolo profilo</h3>'
+    + '<p>Ricevi il codice dal coach (via WhatsApp o email) e incollalo qui sotto.</p>'
+    + '<textarea class="ath-import-area" id="ath-imp-txt" placeholder="Incolla qui il codice EVIAN_ATL:..."></textarea>'
+    + '<button class="ath-btn-save" onclick="doImport()" style="margin-top:12px;width:100%">📲 Importa profilo</button>'
+    + '</div>';
+}
+
+/* ══════════════════════════════════════════
+   TEST BATTERY — SESSIONE UNIFICATA
+   ══════════════════════════════════════════ */
+var TB_FITNESS_TESTS = [
+  { id:'sj',         name:'Squat Jump (SJ)',  unit:'cm', hint:'Agachar 90° e manter imóvel 2s → saltar. Sem contra-movimento. 3 tentativas, registar a melhor.' },
+  { id:'cmj',        name:'CMJ',              unit:'cm', hint:'Contra-movimento contínuo — agachar e saltar sem pausa no ponto baixo. 3 tentativas, melhor.' },
+  { id:'broad_jump', name:'Broad Jump',       unit:'cm', hint:'Salto horizontal de pés juntos. Medir do pé à linha de partida até ao calcanhar. 3 tentativas.' },
+  { id:'sprint10',   name:'Sprint 10m',       unit:'s',  hint:'Partida em reação ao sinal do coach. Correr ALÉM da marca (não travar na linha). 2 × rec. 3 min.' },
+  { id:'sprint30',   name:'Sprint 30m',       unit:'s',  hint:'Aquecimento obrigatório (2 progressivos a 80% e 90%). 2 tentativas, recuperação 4 min.' },
+];
+
+// Dati stub, ancora referenziato da vecchie funzioni — non usato per la nuova UI
+var TEST_BATTERY = [
+  /* ──── SALTO ──── */
+  { id:'squat_jump', name:'Squat Jump (SJ)', cat:'salto', unit:'cm', icon:'⬆',
+    desc:'Mede a força explosiva concêntrica pura dos membros inferiores, sem pré-carregamento elástico. Baseline para calcular o índice elástico.',
+    materials:['Fita métrica ou app My Jump 2 / Jumpm','Superfície dura e plana (parquet ou betão)'],
+    protocol:[
+      'Mãos na cintura durante todo o teste (sem balanço de braços)',
+      'Posição inicial: agachar até ~90° de joelho e MANTER imóvel 2 segundos',
+      'Saltar verticalmente com máxima intenção explosiva — sem contra-movimento',
+      'Atterrar com os dois pés em simultâneo, joelhos ligeiramente fletidos',
+      'Recuperar 45 segundos entre repetições',
+      'Realizar 3 tentativas — registar a melhor',
+    ],
+    measure:'Altura do salto em cm (via app ou marcação na parede)',
+    norms:[
+      {label:'Abaixo do esperado',range:'< 25 cm',color:'#e53935'},
+      {label:'Adequado',range:'25–35 cm',color:'#f59e0b'},
+      {label:'Bom',range:'35–45 cm',color:'#4caf50'},
+      {label:'Muito bom',range:'> 45 cm',color:'#1565c0'},
+    ],
+    tip:'O SJ mede a força concêntrica pura. Se CMJ − SJ > 5 cm, o atleta utiliza bem o ciclo estiramento-encurtamento.',
+  },
+  { id:'cmj', name:'Countermovement Jump (CMJ)', cat:'salto', unit:'cm', icon:'⬆',
+    desc:'Mede a potência explosiva com aproveitamento do ciclo estiramento-encurtamento (reflexo miotático). O teste de salto mais relevante para a boxe.',
+    materials:['Fita métrica ou app My Jump 2 / Jumpm','Superfície dura e plana'],
+    protocol:[
+      'Mãos na cintura durante todo o teste',
+      'Posição inicial: em pé, joelhos ligeiramente fletidos',
+      'Contra-movimento rápido (agachar ~90°) e saltar imediatamente sem pausa no ponto baixo',
+      'O movimento de descida-subida é contínuo e explosivo',
+      'Atterrar com os dois pés em simultâneo',
+      'Recuperar 45 segundos — realizar 3 tentativas',
+      'Registar o melhor salto',
+    ],
+    measure:'Altura do salto em cm',
+    norms:[
+      {label:'Abaixo do esperado',range:'< 28 cm',color:'#e53935'},
+      {label:'Adequado',range:'28–38 cm',color:'#f59e0b'},
+      {label:'Bom',range:'38–50 cm',color:'#4caf50'},
+      {label:'Muito bom',range:'> 50 cm',color:'#1565c0'},
+    ],
+    tip:'Índice Elástico = CMJ − SJ. Valores > 5 cm indicam bom reflexo miotático. Treinar pliometria para aumentar este índice.',
+  },
+  { id:'broad_jump', name:'Salto em Comprimento (Broad Jump)', cat:'salto', unit:'cm', icon:'➡',
+    desc:'Mede a potência explosiva horizontal — diretamente ligada ao footwork, ao 1.º passo de ataque e à explosão de saída de canto.',
+    materials:['Fita métrica','Fita adesiva ou giz para marcar a linha de partida','Superfície dura e plana'],
+    protocol:[
+      'Pés à largura dos ombros na linha de partida',
+      'Joelhos fletidos, tronco inclinado ligeiramente para a frente',
+      'Balanço livre dos braços para trás e para a frente',
+      'Saltar para a frente com máxima intenção — atterrar com os dois pés',
+      'Medir da linha de partida ao calcanhar mais próximo da linha',
+      'Realizar 3 tentativas com 60" de descanso — registar a melhor',
+    ],
+    measure:'Distância em cm a partir da linha de partida',
+    norms:[
+      {label:'Abaixo do esperado',range:'< 170 cm',color:'#e53935'},
+      {label:'Adequado',range:'170–210 cm',color:'#f59e0b'},
+      {label:'Bom',range:'210–240 cm',color:'#4caf50'},
+      {label:'Muito bom',range:'> 240 cm',color:'#1565c0'},
+    ],
+    tip:'O Broad Jump correlaciona com o 1.º passo de ataque. Boxeadores com > 220 cm têm normalmente boa explosão de deslocamento.',
+  },
+  /* ──── CORRIDA ──── */
+  { id:'sprint10', name:'Sprint 10 metros', cat:'corrida', unit:'s', icon:'⚡',
+    desc:'Mede a aceleração pura — a capacidade de desenvolver velocidade no mínimo espaço. Equivale ao 1.º passo explosivo de ataque no ring.',
+    materials:['Espaço reto de 15m+','Cones ou marca para os 10m','Cronómetro ou câmara slow-motion (app Coach\'s Eye)'],
+    protocol:[
+      'Aquecimento: 5 min trote + 2 progressivos a 70% e 85%',
+      'Marcar linha de partida e linha de chegada a 10m',
+      'Posição: pé dominante atrás, tronco ligeiramente inclinado para a frente',
+      'Partida em reação ao sinal do coach (palma ou estalar de dedos)',
+      'Correr em linha reta à máxima velocidade PARA LÁ DOS 10m (não travar na linha)',
+      'Medir o tempo com cronómetro — ou câmara slow-motion frame a frame',
+      '2 tentativas com 3 min de recuperação — registar o melhor tempo',
+    ],
+    measure:'Tempo em segundos (ex: 1.82 s)',
+    norms:[
+      {label:'Abaixo do esperado',range:'> 2.10 s',color:'#e53935'},
+      {label:'Adequado',range:'1.85–2.10 s',color:'#f59e0b'},
+      {label:'Bom',range:'1.65–1.85 s',color:'#4caf50'},
+      {label:'Muito bom',range:'< 1.65 s',color:'#1565c0'},
+    ],
+    tip:'Para sprints: menor tempo = melhor resultado. Inserir na app com o sinal menos (−) não é necessário — a app mostra "↓ melhoria" para tempos que diminuem.',
+  },
+  { id:'sprint30', name:'Sprint 30 metros', cat:'corrida', unit:'s', icon:'🏃',
+    desc:'Mede a velocidade máxima e a capacidade de manter a aceleração numa distância relevante para o condicionamento de ring.',
+    materials:['Espaço reto de 35m+','Cones ou marcas nos 0m e 30m','Cronómetro'],
+    protocol:[
+      'Aquecimento obrigatório: 5 min trote + mobilidade dinâmica + 2 progressivos (20m a 80% e 90%)',
+      'Posição de partida: pé dominante atrás, joelhos fletidos, tronco inclinado',
+      'Partida ao sinal do coach',
+      'Correr em linha reta à máxima velocidade — passar a linha dos 30m antes de abrandar',
+      '2 tentativas com 4 min de recuperação completa',
+      'Registar o melhor tempo',
+    ],
+    measure:'Tempo em segundos (ex: 4.22 s)',
+    norms:[
+      {label:'Abaixo do esperado',range:'> 5.0 s',color:'#e53935'},
+      {label:'Adequado',range:'4.4–5.0 s',color:'#f59e0b'},
+      {label:'Bom',range:'3.9–4.4 s',color:'#4caf50'},
+      {label:'Muito bom',range:'< 3.9 s',color:'#1565c0'},
+    ],
+    tip:'Diferença Sprint30 − (Sprint10 × 3) indica se o atleta mantém a velocidade após a aceleração inicial.',
+  },
+  { id:'cooper', name:'Teste de Cooper (12 min)', cat:'corrida', unit:'m', icon:'🔁',
+    desc:'Estima o VO2max através da distância percorrida em 12 minutos. Indicado para avaliar a resistência aeróbia de base.',
+    materials:['Pista de atletismo (400m) ou espaço com marcas a cada 50m','Cronómetro','Marcadores de distância'],
+    protocol:[
+      'Aquecimento de 5 min (trote leve + alongamentos dinâmicos)',
+      'Correr durante EXATAMENTE 12 minutos ao ritmo mais alto que consiga MANTER de forma constante',
+      'Não arrancar demasiado rápido — o ritmo deve ser sustentável do início ao fim',
+      'Um assistente marca a posição ao toque final do cronómetro',
+      'Medir a distância total percorrida — arredondar para os 50m mais próximos',
+      'Caminhar 5 min de arrefecimento após o teste',
+    ],
+    measure:'Distância total em metros percorridos em 12 minutos',
+    norms:[
+      {label:'Abaixo do esperado',range:'< 2400 m',color:'#e53935'},
+      {label:'Adequado',range:'2400–2800 m',color:'#f59e0b'},
+      {label:'Bom',range:'2800–3200 m',color:'#4caf50'},
+      {label:'Muito bom',range:'> 3200 m',color:'#1565c0'},
+    ],
+    tip:'VO2max estimado (ml/kg/min) = (distância em metros − 504.9) ÷ 44.73 [Fórmula de Cooper]. Ex: 2800m → VO2max ≈ 52.1 ml/kg/min.',
+  },
+  { id:'yoyo', name:'Yo-Yo Intermittente — Nível 1', cat:'corrida', unit:'nível', icon:'🔄',
+    desc:'Mede a capacidade aeróbia intermitente — mais específica para a boxe do que o Cooper, pois simula a natureza por intervalos do combate.',
+    materials:['Espaço de 20m marcado com 2 cones','Zona de recuperação de 2.5m atrás da linha de partida','App Yo-Yo Test (audio beep ou ficheiro MP3)'],
+    protocol:[
+      'Marcar 2 linhas com 20m de distância e a zona de recuperação a 2.5m atrás',
+      'Correr de um cone ao outro ao ritmo do sinal sonoro (beep)',
+      'No período de recuperação (10 segundos) voltar à linha de partida em trote',
+      'O ritmo aumenta progressivamente a cada nível',
+      'Aviso: se o atleta não chega à linha antes do beep recebe um aviso',
+      'O teste termina ao 2.º aviso — registar o último nível + fase completado (ex: 16.1)',
+    ],
+    measure:'Nível e fase atingidos (ex: 16.1 = nível 16, fase 1)',
+    norms:[
+      {label:'Abaixo do esperado',range:'< 13.0',color:'#e53935'},
+      {label:'Adequado',range:'13.0–15.0',color:'#f59e0b'},
+      {label:'Bom',range:'15.0–17.0',color:'#4caf50'},
+      {label:'Muito bom',range:'> 17.0',color:'#1565c0'},
+    ],
+    tip:'O Yo-Yo Intermittente correlaciona melhor com a performance de ring do que o Cooper — preferir este para avaliação específica de boxeadores.',
+  },
+  /* ──── RING ──── */
+  { id:'shadow3r', name:'Shadow Boxing — 3 Rounds', cat:'ring', unit:'RPE', icon:'🥊',
+    desc:'Avalia a capacidade de manter intensidade e qualidade técnica ao longo de 3 rounds de 3 min com 1 min de descanso.',
+    materials:['Ring ou espaço aberto','Timer 3 min trabalho / 1 min descanso','Coach para observação e feedback'],
+    protocol:[
+      'Aquecimento de 5 min (skip, shadowboxing leve)',
+      'Round 1 — 3 min: movimentação completa a ~65%, combinações livres, ritmo controlado',
+      'Descanso 1 min: caminhar, respiração nasal',
+      'Round 2 — 3 min: intensidade a 80-85%, combinações mais rápidas e variadas',
+      'Descanso 1 min',
+      'Round 3 — 3 min: máxima intensidade sustentável, testar o limite com qualidade técnica',
+      'O coach observa: guard, pé, respiração, consistência técnica, sinal de fadiga',
+      'Registar o RPE percebido ao fim do Round 3 (escala 1-10)',
+    ],
+    measure:'RPE ao final do Round 3 (1=muito fácil · 10=máximo absoluto)',
+    norms:[
+      {label:'Condicionamento insuficiente',range:'RPE 9–10 no R3',color:'#e53935'},
+      {label:'Adequado',range:'RPE 7–8 no R3',color:'#f59e0b'},
+      {label:'Bom',range:'RPE 5–6 no R3',color:'#4caf50'},
+      {label:'Excelente',range:'RPE ≤ 4 no R3',color:'#1565c0'},
+    ],
+    tip:'RPE > 8 após 3 rounds de shadow = o condicionamento aeróbio é o fator limitante. Priorizar o Yo-Yo e o vogatore no treino.',
+  },
+  { id:'react_pads', name:'Reação a Pads — 5 Sequências', cat:'ring', unit:'pontos', icon:'🎯',
+    desc:'Avalia o tempo de reação e a precisão técnica em resposta a estímulos visuais do coach com pads. Escala de 0 a 10.',
+    materials:['Pads (mitts)','Coach com capacidade de dar sinal claro e consistente'],
+    protocol:[
+      '5 sequências de 30" com 15" de descanso entre elas',
+      'O coach dá o alvo com movimento do pad (não com palavra ou sinal sonoro)',
+      'Seq. 1: jab only — reação simples, calibração',
+      'Seq. 2: jab + cross — 2 alvos consecutivos',
+      'Seq. 3: combinação a 3 golpes escolhida pelo coach',
+      'Seq. 4: contra-ataque após parada simulada',
+      'Seq. 5: livre — máxima velocidade de expressão',
+      'Coach avalia cada sequência: 2 pts=excelente (rápido + preciso), 1 pt=adequado, 0 pts=lento ou inexato',
+    ],
+    measure:'Total de pontos (máx. 10)',
+    norms:[
+      {label:'Abaixo do esperado',range:'0–4 pontos',color:'#e53935'},
+      {label:'Adequado',range:'5–6 pontos',color:'#f59e0b'},
+      {label:'Bom',range:'7–8 pontos',color:'#4caf50'},
+      {label:'Excelente',range:'9–10 pontos',color:'#1565c0'},
+    ],
+    tip:'Este teste mede a integração percetivo-motora — o mais específico para a boxe. Deteriora rapidamente sob fadiga: repetir após o treino para avaliar a resistência à fadiga neural.',
+  },
+];
+
+/* ── Test Battery — helpers ── */
+var tbCurrentAth = '';
+
+function getAthTestLog() {
+  try { return JSON.parse(localStorage.getItem('evian_test_log') || '{}'); } catch(e) { return {}; }
+}
+
+function tbRecalc1RM(liftId) {
+  var kg = parseFloat((document.getElementById('tst-kg-'+liftId)||{}).value) || 0;
+  var rp = parseFloat((document.getElementById('tst-rp-'+liftId)||{}).value) || 0;
+  var el = document.getElementById('tst-1rm-'+liftId);
+  if (!el) return;
+  var oneRM = calcOneRM(kg, rp);
+  el.textContent = oneRM > 0 ? oneRM + ' kg 1RM' : '—';
+  el.style.color = oneRM > 0 ? '#C41230' : '#444';
+}
+
+function saveFullTestSession() {
+  var id = tbCurrentAth;
+  if (!id) { alert('Seleziona un atleta prima.'); return; }
+  var athletes = getAthletes();
+  var idx = athletes.findIndex(function(a){ return a.id === id; });
+  if (idx === -1) return;
+  var today = new Date().toLocaleDateString('pt-PT');
+  var ath = athletes[idx];
+
+  // Raccolta massimali
+  var newLifts = {};
+  var liftsSaved = 0;
+  ATH_LIFTS.forEach(function(l) {
+    var kg = parseFloat((document.getElementById('tst-kg-'+l.id)||{}).value) || 0;
+    var rp = parseFloat((document.getElementById('tst-rp-'+l.id)||{}).value) || 0;
+    if (kg > 0 && rp > 0) {
+      newLifts[l.id] = {kg:kg, reps:rp, oneRM: calcOneRM(kg,rp), date:today};
+      liftsSaved++;
+    }
+  });
+
+  // Raccolta test atletici
+  var newFitness = {};
+  var fitSaved = 0;
+  TB_FITNESS_TESTS.forEach(function(t) {
+    var v = parseFloat((document.getElementById('tst-fit-'+t.id)||{}).value);
+    if (!isNaN(v) && v > 0) {
+      newFitness[t.id] = {value:v, unit:t.unit, date:today};
+      fitSaved++;
+    }
+  });
+
+  if (liftsSaved === 0 && fitSaved === 0) { alert('Nessun risultato inserito.'); return; }
+
+  // Snapshot storico
+  var hasOldData = Object.keys(ath.lifts||{}).length > 0 || Object.keys(ath.fitness||{}).length > 0;
+  if (hasOldData) {
+    if (!ath.testHistory) ath.testHistory = [];
+    ath.testHistory.unshift({
+      date: ath.lastTest || today,
+      lifts: JSON.parse(JSON.stringify(ath.lifts||{})),
+      fitness: JSON.parse(JSON.stringify(ath.fitness||{})),
+    });
+    if (ath.testHistory.length > 12) ath.testHistory = ath.testHistory.slice(0,12);
+    // backward compat
+    if (!ath.history) ath.history = [];
+    ath.history.unshift({date: ath.lastTest||today, lifts: JSON.parse(JSON.stringify(ath.lifts||{}))});
+    if (ath.history.length > 10) ath.history = ath.history.slice(0,10);
+  }
+
+  // Aggiorna profilo
+  if (liftsSaved > 0) athletes[idx].lifts = Object.assign({}, ath.lifts||{}, newLifts);
+  if (fitSaved > 0) athletes[idx].fitness = Object.assign({}, ath.fitness||{}, newFitness);
+  athletes[idx].lastTest = today;
+  athletes[idx].testHistory = ath.testHistory || [];
+  athletes[idx].history = ath.history || [];
+  saveAthletes(athletes);
+  setActiveAthlete(id);
+  alert('\u2705 ' + (liftsSaved+fitSaved) + ' risultati salvati per ' + ath.name + '!');
+  document.getElementById('scroll-area').innerHTML = renderTestBattery();
+}
+
+function renderTestBattery() {
+  var athletes = getAthletes();
+  var active = getActiveAthlete();
+  if (!tbCurrentAth && active) tbCurrentAth = active.id;
+  var ath = tbCurrentAth ? athletes.find(function(a){ return a.id === tbCurrentAth; }) : null;
+  var lifts = ath ? (ath.lifts || {}) : {};
+  var fitness = ath ? (ath.fitness || {}) : {};
+
+  var h = '<div class="tb-wrap">';
+  h += '<div class="tb-header"><div class="tb-title">Sessione di Test</div>';
+  h += '<div class="tb-sub">Inserisci i risultati e salva nella scheda atleta</div></div>';
+
+  if (athletes.length === 0) {
+    h += '<div class="tb-empty-msg">Nessun atleta registrato. Creane uno prima nella sezione <strong>Agonisti</strong>.</div></div>';
+    return h;
+  }
+
+  // Atleta
+  h += '<div class="tb-ath-bar"><span class="tb-ath-label">Atleta:</span>';
+  h += '<select class="tb-ath-sel" onchange="tbCurrentAth=this.value; document.getElementById('scroll-area').innerHTML=renderTestBattery()">';
+  h += '<option value="">\u2014 seleziona \u2014</option>';
+  athletes.forEach(function(a){
+    h += '<option value="' + a.id + '"' + (tbCurrentAth===a.id?' selected':'') + '>' + a.name + (a.weightClass?' ('+a.weightClass+')':'') + '</option>';
+  });
+  h += '</select></div>';
+
+  // MASSIMALI
+  h += '<div class="tb-section">';
+  h += '<div class="tb-section-title"><span class="tb-section-icon">\ud83c\udfcb\ufe0f</span>Massimali</div>';
+  ATH_LIFTS.forEach(function(l) {
+    var last = lifts[l.id];
+    h += '<div class="tb-field">';
+    h += '<div class="tb-field-top"><span class="tb-field-name">' + l.name + '</span><span class="tb-field-proto">' + l.reps + '</span>';
+    if (last) h += '<span class="tb-field-prev">Ult: ' + last.oneRM + ' kg &middot; ' + last.date + '</span>';
+    h += '</div>';
+    h += '<div class="tb-field-hint">' + l.note + '</div>';
+    h += '<div class="tb-lift-row">';
+    h += '<input class="tb-input-sm" id="tst-kg-' + l.id + '" type="number" inputmode="decimal" step="0.5" placeholder="kg" oninput="tbRecalc1RM('' + l.id + '')">';
+    h += '<span class="tb-x">&times;</span>';
+    h += '<input class="tb-input-sm" id="tst-rp-' + l.id + '" type="number" inputmode="numeric" placeholder="reps" oninput="tbRecalc1RM('' + l.id + '')">';
+    h += '<span class="tb-1rm-badge" id="tst-1rm-' + l.id + '">&mdash;</span>';
+    h += '</div></div>';
+  });
+  h += '</div>';
+
+  // SALTO
+  var jumpTests = ['sj','cmj','broad_jump'];
+  h += '<div class="tb-section">';
+  h += '<div class="tb-section-title"><span class="tb-section-icon">&#11014;</span>Salto</div>';
+  jumpTests.forEach(function(tid) {
+    var t = TB_FITNESS_TESTS.find(function(x){ return x.id === tid; });
+    if (!t) return;
+    var last = fitness[t.id];
+    h += '<div class="tb-field">';
+    h += '<div class="tb-field-top"><span class="tb-field-name">' + t.name + '</span><span class="tb-field-proto">' + t.unit + '</span>';
+    if (last) h += '<span class="tb-field-prev">Ult: ' + last.value + ' ' + t.unit + ' &middot; ' + last.date + '</span>';
+    h += '</div>';
+    h += '<div class="tb-field-hint">' + t.hint + '</div>';
+    h += '<div class="tb-lift-row"><input class="tb-input-lg" id="tst-fit-' + t.id + '" type="number" inputmode="decimal" step="0.1" placeholder="&mdash;">';
+    h += '<span class="tb-unit-lbl">' + t.unit + '</span></div></div>';
+  });
+  h += '</div>';
+
+  // VELOCIDADE
+  var speedTests = ['sprint10','sprint30'];
+  h += '<div class="tb-section">';
+  h += '<div class="tb-section-title"><span class="tb-section-icon">&#9889;</span>Velocidade</div>';
+  speedTests.forEach(function(tid) {
+    var t = TB_FITNESS_TESTS.find(function(x){ return x.id === tid; });
+    if (!t) return;
+    var last = fitness[t.id];
+    h += '<div class="tb-field">';
+    h += '<div class="tb-field-top"><span class="tb-field-name">' + t.name + '</span><span class="tb-field-proto">' + t.unit + '</span>';
+    if (last) h += '<span class="tb-field-prev">Ult: ' + last.value + ' ' + t.unit + ' &middot; ' + last.date + '</span>';
+    h += '</div>';
+    h += '<div class="tb-field-hint">' + t.hint + '</div>';
+    h += '<div class="tb-lift-row"><input class="tb-input-lg" id="tst-fit-' + t.id + '" type="number" inputmode="decimal" step="0.01" placeholder="&mdash;">';
+    h += '<span class="tb-unit-lbl">' + t.unit + '</span></div></div>';
+  });
+  h += '</div>';
+
+  // SALVA
+  if (tbCurrentAth) {
+    h += '<div style="padding:0 16px 20px"><button class="tb-save-btn" onclick="saveFullTestSession()">\ud83d\udcbe Salva sessione nella scheda atleta</button></div>';
+  }
+
+  // STORICO
+  if (ath && ath.testHistory && ath.testHistory.length > 0) {
+    h += '<div class="tb-section">';
+    h += '<div class="tb-section-title"><span class="tb-section-icon">&#128203;</span>Sessioni precedenti</div>';
+    ath.testHistory.forEach(function(snap) {
+      h += '<div class="tb-hist-snap"><div class="tb-hist-snap-date">' + snap.date + '</div>';
+      h += '<div class="tb-hist-snap-vals">';
+      if (snap.lifts) ATH_LIFTS.forEach(function(l) {
+        if (snap.lifts[l.id]) h += '<span class="tb-hist-chip"><span class="tb-chip-lbl">' + l.name.split(' ')[0] + '</span><strong>' + snap.lifts[l.id].oneRM + ' kg</strong></span>';
+      });
+      if (snap.fitness) TB_FITNESS_TESTS.forEach(function(t) {
+        if (snap.fitness[t.id]) h += '<span class="tb-hist-chip"><span class="tb-chip-lbl">' + t.name.split(' ')[0] + '</span><strong>' + snap.fitness[t.id].value + ' ' + t.unit + '</strong></span>';
+      });
+      h += '</div></div>';
+    });
+    h += '</div>';
+  }
+
+  h += '</div>';
+  return h;
+}
 </script>
 </body>
 </html>
