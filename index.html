@@ -7620,9 +7620,9 @@ function renderTestBattery() {
     h += '</div>';
     h += '<div class="tb-field-hint">' + l.note + '</div>';
     h += '<div class="tb-lift-row">';
-    h += '<input class="tb-input-sm" id="tst-kg-' + l.id + '" type="number" inputmode="decimal" step="0.5" placeholder="kg" oninput="tbRecalc1RM('' + l.id + '')">';
+    h += '<input class="tb-input-sm" id="tst-kg-' + l.id + '" type="number" inputmode="decimal" step="0.5" placeholder="kg" oninput="tbRecalc1RM(\'' + l.id + '\')">';
     h += '<span class="tb-x">&times;</span>';
-    h += '<input class="tb-input-sm" id="tst-rp-' + l.id + '" type="number" inputmode="numeric" placeholder="reps" oninput="tbRecalc1RM('' + l.id + '')">';
+    h += '<input class="tb-input-sm" id="tst-rp-' + l.id + '" type="number" inputmode="numeric" placeholder="reps" oninput="tbRecalc1RM(\'' + l.id + '\')">';
     h += '<span class="tb-1rm-badge" id="tst-1rm-' + l.id + '">&mdash;</span>';
     h += '</div></div>';
   });
