@@ -596,6 +596,47 @@ body{padding-top:calc(var(--safe-top) + 52px);}
 .ath-hist-chip{background:#1a1a1a;border-radius:6px;padding:3px 8px;font-size:11px;color:#888}
 .pdf-export-btn{display:flex;align-items:center;gap:5px;background:#C41230;color:#fff;border:none;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;margin:8px 12px 4px auto}
 .pdf-export-btn:hover{background:#a00f26}
+/* ── CALENDARIO ── */
+.cal-topbar-btn{background:none;border:1px solid #333;border-radius:20px;color:#aaa;padding:5px 13px;font-size:12px;cursor:pointer;transition:.2s;margin-right:4px}
+.cal-topbar-btn.has-events{border-color:#4CAF50;color:#4CAF50}
+#cal-panel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:400;overflow-y:auto}
+#cal-panel.open{display:block}
+.cal-panel-inner{background:#0f0f0f;min-height:100%;padding:20px 0 80px}
+.cal-panel-topbar{display:flex;align-items:center;justify-content:space-between;padding:0 16px 16px;border-bottom:1px solid #1e1e1e}
+.cal-panel-title{font-size:20px;font-weight:900}
+.cal-panel-close{background:none;border:1px solid #333;border-radius:10px;color:#aaa;padding:6px 14px;font-size:13px;cursor:pointer}
+.cal-section{padding:16px 16px 0}
+.cal-section-title{font-size:11px;font-weight:700;color:#555;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.cal-event-card{background:#1a1a1a;border-radius:12px;padding:12px 14px;margin-bottom:10px;border-left:4px solid #333;display:flex;align-items:flex-start;gap:12px}
+.cal-event-card.type-fight{border-left-color:#E63946}
+.cal-event-card.type-inscription{border-left-color:#FF6B35}
+.cal-event-card.type-closure{border-left-color:#888}
+.cal-event-card.type-course{border-left-color:#4CAF50}
+.cal-event-date{font-size:11px;color:#666;margin-top:4px}
+.cal-event-title{font-size:14px;font-weight:700;color:#fff}
+.cal-event-notes{font-size:12px;color:#666;margin-top:4px}
+.cal-event-delete{background:none;border:none;color:#444;font-size:16px;cursor:pointer;padding:2px 6px;border-radius:6px;flex-shrink:0}
+.cal-event-delete:hover{color:#E63946}
+.cal-event-icon{font-size:18px;line-height:1;flex-shrink:0}
+.cal-add-btn{display:block;width:calc(100% - 32px);margin:16px 16px 0;padding:12px;background:#1a1a1a;border:1px dashed #333;border-radius:12px;color:#666;font-size:13px;cursor:pointer;text-align:center}
+.cal-add-btn:hover{border-color:#555;color:#aaa}
+.cal-form{background:#1a1a1a;border-radius:12px;padding:16px;margin:16px 16px 0}
+.cal-form h3{font-size:15px;font-weight:700;margin:0 0 14px;color:#fff}
+.cal-form-row{margin-bottom:12px}
+.cal-form-row label{font-size:11px;color:#666;display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.cal-input,.cal-select{width:100%;background:#111;border:1px solid #2a2a2a;border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;box-sizing:border-box}
+.cal-input:focus,.cal-select:focus{outline:none;border-color:#555}
+.cal-form-btns{display:flex;gap:10px;margin-top:14px}
+.cal-btn-save{flex:1;background:#C41230;color:#fff;border:none;border-radius:8px;padding:10px;font-size:14px;font-weight:700;cursor:pointer}
+.cal-btn-cancel{background:#1e1e1e;color:#aaa;border:1px solid #2a2a2a;border-radius:8px;padding:10px 16px;font-size:14px;cursor:pointer}
+/* Fight countdown banner */
+.fight-countdown{background:linear-gradient(135deg,#1a0508 0%,#2a0a0f 100%);border:1px solid #3a1010;border-radius:12px;padding:10px 14px;margin:8px 12px;display:flex;align-items:center;gap:10px}
+.fight-countdown-icon{font-size:22px;flex-shrink:0}
+.fight-countdown-text{flex:1}
+.fight-countdown-main{font-size:13px;font-weight:700;color:#fff}
+.fight-countdown-sub{font-size:11px;color:#888;margin-top:2px}
+.fight-countdown-days{font-size:24px;font-weight:900;color:#E63946;text-align:right;line-height:1;flex-shrink:0}
+.fight-countdown-days span{font-size:10px;color:#888;display:block;font-weight:400;text-align:right}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
@@ -1057,6 +1098,7 @@ function renderAEC() {
       <button class="wk-btn" onclick="switchWeek(3)">S3</button>
       <button class="wk-btn" onclick="switchWeek(4)">S4</button>
     </div>
+    <button class="cal-topbar-btn" id="cal-topbar-btn" onclick="openCalPanel()">📅 Calendario</button>
     <button class="ath-topbar-btn" id="ath-topbar-btn" onclick="openAthPanel()">👤 Atleti</button>
   </div>
   <nav id="bottom-nav">
@@ -1134,6 +1176,16 @@ function renderAEC() {
       <button class="ath-panel-close" onclick="closeAthPanel()">✕ Chiudi</button>
     </div>
     <div id="ath-content"><!-- rendered by JS --></div>
+  </div>
+</div>
+
+<div id="cal-panel">
+  <div class="cal-panel-inner">
+    <div class="cal-panel-topbar">
+      <div class="cal-panel-title">📅 Calendario Club</div>
+      <button class="cal-panel-close" onclick="closeCalPanel()">✕ Chiudi</button>
+    </div>
+    <div id="cal-panel-content"><!-- rendered by JS --></div>
   </div>
 </div>
 
@@ -4842,6 +4894,7 @@ window.addEventListener('load', () => {
   updateNavDots();
   resetTimer();
   updateAthTopbarBtn();
+  updateCalTopbarBtn();
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   if (isIOS && !isStandalone) {
@@ -5618,10 +5671,48 @@ function generateSessionPDF(dayKey) {
   doc.save(baseName + '.pdf');
 }
 
+function calcWeekFromFightDate(fightDateStr) {
+  if (!fightDateStr) return null;
+  var fightDate = new Date(fightDateStr + 'T00:00:00');
+  var today = new Date(); today.setHours(0,0,0,0);
+  var daysLeft = Math.ceil((fightDate - today) / (1000*60*60*24));
+  if (daysLeft < 0 || daysLeft > 84) return null;
+  var weeksLeft = Math.max(1, Math.ceil(daysLeft / 7));
+  return Math.max(1, Math.min(12, 13 - weeksLeft));
+}
+
+function renderFightCountdown(ath) {
+  if (!ath || !ath.fightDate) return '';
+  var fightDate = new Date(ath.fightDate + 'T00:00:00');
+  var today = new Date(); today.setHours(0,0,0,0);
+  var daysLeft = Math.ceil((fightDate - today) / (1000*60*60*24));
+  if (daysLeft < -1) return '';
+  var week = calcWeekFromFightDate(ath.fightDate);
+  var dateStr = fightDate.toLocaleDateString('it-IT', {day:'2-digit', month:'long'});
+  var mainText = daysLeft <= 0 ? '⚔️ Match day!' : 'Combattimento — ' + dateStr;
+  var subText = daysLeft <= 0 ? 'In bocca al lupo!' : (week ? 'Settimana ' + week + ' di 12 del programma' : 'Fuori dalla finestra — avvia il programma');
+  var daysDisplay = Math.max(0, daysLeft);
+  return '<div class="fight-countdown">' +
+    '<div class="fight-countdown-icon">🥊</div>' +
+    '<div class="fight-countdown-text">' +
+      '<div class="fight-countdown-main">' + mainText + '</div>' +
+      '<div class="fight-countdown-sub">' + subText + '</div>' +
+    '</div>' +
+    '<div class="fight-countdown-days">' + daysDisplay + '<span>giorni</span></div>' +
+    '</div>';
+}
+
 function renderAgiSession(dayKey) {
+  // Auto-calculate week from athlete's fight date
+  var ath = getActiveAthlete();
+  if (ath && ath.fightDate) {
+    var autoWeek = calcWeekFromFightDate(ath.fightDate);
+    if (autoWeek) currentWeekAgi = autoWeek;
+  }
   var pdfBtn = '<button class="pdf-export-btn" onclick="generateSessionPDF(\'' + dayKey + '\')" title="Exportar sessão em PDF (português)">📄 PDF Atleta</button>';
+  var countdown = renderFightCountdown(ath);
   return renderAgiWeekBar(currentWeekAgi) +
-    "<div class=\"agi-content\">" + pdfBtn + renderAthWeightBar() + buildAgiContent(dayKey) + "</div>";
+    "<div class=\"agi-content\">" + countdown + pdfBtn + renderAthWeightBar() + buildAgiContent(dayKey) + "</div>";
 }
 
 
@@ -5918,6 +6009,166 @@ function updateAthTopbarBtn() {
   btn.textContent = ath ? '👤 ' + ath.name : '👤 Atleti';
 }
 
+/* ══════════════════════════════════════════
+   CALENDARIO CLUB
+   ══════════════════════════════════════════ */
+var calEditId = null;
+
+var CAL_TYPES = {
+  fight:       {icon:'🥊', label:'Combattimento', cls:'type-fight'},
+  inscription: {icon:'📋', label:'Scadenza iscrizione', cls:'type-inscription'},
+  closure:     {icon:'🔒', label:'Chiusura palestra', cls:'type-closure'},
+  course:      {icon:'📚', label:'Corso / Formazione', cls:'type-course'}
+};
+
+function getCalEvents() {
+  try { return JSON.parse(localStorage.getItem('evian_cal_events') || '[]'); } catch(e) { return []; }
+}
+
+function saveCalEvents(arr) {
+  localStorage.setItem('evian_cal_events', JSON.stringify(arr));
+}
+
+function openCalPanel() {
+  calEditId = null;
+  renderCalPanelContent();
+  document.getElementById('cal-panel').classList.add('open');
+}
+
+function closeCalPanel() {
+  calEditId = null;
+  document.getElementById('cal-panel').classList.remove('open');
+}
+
+function formatCalDate(dateStr) {
+  if (!dateStr) return '';
+  var d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('it-IT', {day:'2-digit', month:'short', year:'numeric'});
+}
+
+function daysFromNow(dateStr) {
+  var d = new Date(dateStr + 'T00:00:00');
+  var today = new Date(); today.setHours(0,0,0,0);
+  return Math.ceil((d - today) / (1000*60*60*24));
+}
+
+function renderCalPanelContent() {
+  var events = getCalEvents();
+  var today = new Date(); today.setHours(0,0,0,0);
+  events.sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+  var upcoming = events.filter(function(e){ return new Date(e.date+'T00:00:00') >= today; });
+  var past = events.filter(function(e){ return new Date(e.date+'T00:00:00') < today; });
+
+  var h = '';
+
+  // Upcoming events
+  h += '<div class="cal-section">';
+  h += '<div class="cal-section-title">📆 Prossimi eventi</div>';
+  if (upcoming.length === 0 && calEditId === null) {
+    h += '<div style="color:#555;font-size:13px;padding:10px 0">Nessun evento programmato. Aggiungi il tuo prossimo combattimento o una scadenza.</div>';
+  }
+  upcoming.forEach(function(ev) {
+    var t = CAL_TYPES[ev.type] || CAL_TYPES.fight;
+    var days = daysFromNow(ev.date);
+    var dayStr = days === 0 ? 'Oggi' : days === 1 ? 'Domani' : 'tra ' + days + ' giorni';
+    h += '<div class="cal-event-card ' + t.cls + '">';
+    h += '<div class="cal-event-icon">' + t.icon + '</div>';
+    h += '<div style="flex:1;min-width:0">';
+    h += '<div class="cal-event-title">' + ev.title + '</div>';
+    h += '<div class="cal-event-date">' + formatCalDate(ev.date) + ' · ' + dayStr + '</div>';
+    if (ev.notes) h += '<div class="cal-event-notes">' + ev.notes + '</div>';
+    h += '</div>';
+    h += '<button class="cal-event-delete" onclick="deleteCalEvent(\'' + ev.id + '\')">✕</button>';
+    h += '</div>';
+  });
+  h += '</div>';
+
+  // Add form or button
+  if (calEditId !== null) {
+    h += renderCalForm(calEditId);
+  } else {
+    h += '<button class="cal-add-btn" onclick="startCalEdit(\'new\')">+ Aggiungi evento</button>';
+  }
+
+  // Past events
+  if (past.length > 0) {
+    h += '<div class="cal-section" style="margin-top:24px">';
+    h += '<div class="cal-section-title" style="color:#333">📁 Passati</div>';
+    past.slice().reverse().forEach(function(ev) {
+      var t = CAL_TYPES[ev.type] || CAL_TYPES.fight;
+      h += '<div class="cal-event-card ' + t.cls + '" style="opacity:.4">';
+      h += '<div class="cal-event-icon">' + t.icon + '</div>';
+      h += '<div style="flex:1;min-width:0">';
+      h += '<div class="cal-event-title">' + ev.title + '</div>';
+      h += '<div class="cal-event-date">' + formatCalDate(ev.date) + '</div>';
+      h += '</div>';
+      h += '<button class="cal-event-delete" onclick="deleteCalEvent(\'' + ev.id + '\')">✕</button>';
+      h += '</div>';
+    });
+    h += '</div>';
+  }
+
+  document.getElementById('cal-panel-content').innerHTML = h;
+  updateCalTopbarBtn();
+}
+
+function renderCalForm(id) {
+  var isNew = id === 'new';
+  var ev = isNew ? {title:'',date:'',type:'fight',notes:''} : (getCalEvents().find(function(e){return e.id===id;})||{title:'',date:'',type:'fight',notes:''});
+  var today = new Date().toISOString().split('T')[0];
+  var h = '<div class="cal-form">';
+  h += '<h3>' + (isNew ? '➕ Nuovo evento' : '✏️ Modifica evento') + '</h3>';
+  h += '<div class="cal-form-row"><label>Titolo</label><input class="cal-input" id="cal-ftitle" value="' + (ev.title||'') + '" placeholder="Es. Torneo Nacional Sub-18"></div>';
+  h += '<div class="cal-form-row"><label>Data</label><input class="cal-input" id="cal-fdate" type="date" value="' + (ev.date||today) + '" style="color-scheme:dark"></div>';
+  h += '<div class="cal-form-row"><label>Tipo</label><select class="cal-select" id="cal-ftype">';
+  Object.keys(CAL_TYPES).forEach(function(k) {
+    h += '<option value="' + k + '"' + (ev.type===k?' selected':'') + '>' + CAL_TYPES[k].icon + ' ' + CAL_TYPES[k].label + '</option>';
+  });
+  h += '</select></div>';
+  h += '<div class="cal-form-row"><label>Note (opzionale)</label><input class="cal-input" id="cal-fnotes" value="' + (ev.notes||'') + '" placeholder="Es. Scadenza iscrizione 5 giorni prima"></div>';
+  h += '<div class="cal-form-btns"><button class="cal-btn-save" onclick="saveCalEvent(\'' + id + '\')">💾 Salva</button><button class="cal-btn-cancel" onclick="calEditId=null;renderCalPanelContent()">Annulla</button></div>';
+  h += '</div>';
+  return h;
+}
+
+function startCalEdit(id) {
+  calEditId = id;
+  renderCalPanelContent();
+}
+
+function saveCalEvent(id) {
+  var title = (document.getElementById('cal-ftitle')||{}).value || '';
+  var date  = (document.getElementById('cal-fdate') ||{}).value || '';
+  var type  = (document.getElementById('cal-ftype') ||{}).value || 'fight';
+  var notes = (document.getElementById('cal-fnotes')||{}).value || '';
+  if (!title.trim() || !date) { alert('Inserisci titolo e data'); return; }
+  var events = getCalEvents();
+  if (id === 'new') {
+    events.push({id:'ev_'+Date.now(), title:title.trim(), date:date, type:type, notes:notes.trim()});
+  } else {
+    var i = events.findIndex(function(e){return e.id===id;});
+    if (i !== -1) events[i] = {id:id, title:title.trim(), date:date, type:type, notes:notes.trim()};
+  }
+  saveCalEvents(events);
+  calEditId = null;
+  renderCalPanelContent();
+}
+
+function deleteCalEvent(id) {
+  if (!confirm('Eliminare questo evento?')) return;
+  saveCalEvents(getCalEvents().filter(function(e){return e.id!==id;}));
+  renderCalPanelContent();
+}
+
+function updateCalTopbarBtn() {
+  var btn = document.getElementById('cal-topbar-btn');
+  if (!btn) return;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var upcoming = getCalEvents().filter(function(e){ return new Date(e.date+'T00:00:00') >= today; });
+  btn.classList.toggle('has-events', upcoming.length > 0);
+  btn.textContent = upcoming.length > 0 ? '📅 ' + upcoming.length : '📅 Calendario';
+}
+
 /* Block → lift mapping */
 function getBlockLift(blockLabel) {
   if (!blockLabel) return null;
@@ -6079,6 +6330,7 @@ function renderAthForm(id) {
   h += '<h3>' + (isNew ? '➕ Nuovo atleta' : '✏️ Modifica — ' + ath.name) + '</h3>';
   h += '<div class="ath-form-row"><label>Nome completo</label><input class="ath-input" id="ath-fname" value="' + (ath.name||'') + '" placeholder="Es. Marco Rossi"></div>';
   h += '<div class="ath-form-row"><label>Categoria peso</label><input class="ath-input" id="ath-fwc" value="' + (ath.weightClass||'') + '" placeholder="Es. 75 kg"></div>';
+  h += '<div class="ath-form-row"><label>🥊 Data combattimento</label><input class="ath-input" id="ath-ffight" type="date" value="' + (ath.fightDate||'') + '" style="color-scheme:dark"><div style="font-size:11px;color:#555;margin-top:4px">Imposta la data → la settimana del programma si aggiorna automaticamente</div></div>';
   h += '<div class="ath-form-section">Massimali attuali (opzionale)</div>';
   h += '<div style="font-size:12px;color:#555;margin-bottom:10px">Inserisci il peso e le reps del tuo ultimo allenamento pesante — il 1RM viene calcolato automaticamente con la formula di Epley.</div>';
   ATH_LIFTS.forEach(function(l) {
@@ -6108,6 +6360,7 @@ function recalcAthForm(liftId) {
 function saveAthForm(id) {
   var nameEl = document.getElementById('ath-fname');
   var wcEl = document.getElementById('ath-fwc');
+  var fdEl = document.getElementById('ath-ffight');
   if (!nameEl || !nameEl.value.trim()) { alert('Inserisci il nome dell\'atleta'); return; }
   var lifts = {};
   ATH_LIFTS.forEach(function(l) {
@@ -6115,14 +6368,16 @@ function saveAthForm(id) {
     var reps = parseFloat((document.getElementById('afrp-'+l.id)||{}).value)||0;
     if (kg > 0 && reps > 0) lifts[l.id] = {kg:kg, reps:reps, oneRM:calcOneRM(kg,reps), date:new Date().toLocaleDateString('it-IT')};
   });
+  var fightDate = fdEl ? fdEl.value : '';
   var athletes = getAthletes();
   if (id === 'new') {
-    athletes.push({id:'ath_'+Date.now(), name:nameEl.value.trim(), weightClass:(wcEl?wcEl.value.trim():''), lifts:lifts, lastTest:Object.keys(lifts).length>0?new Date().toLocaleDateString('it-IT'):''});
+    athletes.push({id:'ath_'+Date.now(), name:nameEl.value.trim(), weightClass:(wcEl?wcEl.value.trim():''), fightDate:fightDate, lifts:lifts, lastTest:Object.keys(lifts).length>0?new Date().toLocaleDateString('it-IT'):''});
   } else {
     var i = athletes.findIndex(function(a){return a.id===id;});
     if (i !== -1) {
       athletes[i].name = nameEl.value.trim();
       athletes[i].weightClass = wcEl ? wcEl.value.trim() : '';
+      athletes[i].fightDate = fightDate;
       if (Object.keys(lifts).length > 0) {
         if (athletes[i].lifts && Object.keys(athletes[i].lifts).length > 0) {
           if (!athletes[i].history) athletes[i].history = [];
