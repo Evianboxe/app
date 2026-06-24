@@ -7602,7 +7602,7 @@ function renderTestBattery() {
 
   // Atleta
   h += '<div class="tb-ath-bar"><span class="tb-ath-label">Atleta:</span>';
-  h += '<select class="tb-ath-sel" onchange="tbCurrentAth=this.value; document.getElementById('scroll-area').innerHTML=renderTestBattery()">';
+  h += '<select class="tb-ath-sel" onchange="tbCurrentAth=this.value; document.getElementById(\'scroll-area\').innerHTML=renderTestBattery()">';
   h += '<option value="">\u2014 seleziona \u2014</option>';
   athletes.forEach(function(a){
     h += '<option value="' + a.id + '"' + (tbCurrentAth===a.id?' selected':'') + '>' + a.name + (a.weightClass?' ('+a.weightClass+')':'') + '</option>';
