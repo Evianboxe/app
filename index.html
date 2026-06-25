@@ -8471,17 +8471,37 @@ function _initAthCharts(ath) {
 function renderAthSync() {
   var token = localStorage.getItem('evian_gist_token') || '';
   var gistId = localStorage.getItem('evian_gist_id') || '';
+  var lastSync = localStorage.getItem('evian_last_autosync');
+  var lastSyncLabel = lastSync ? new Date(parseInt(lastSync)).toLocaleString('it-IT') : null;
   var h = '<div class="sync-section">';
   h += '<div class="sync-title">☁️ Sync dati atleti su GitHub Gist</div>';
-  h += '<input class="sync-input" id="sync-token" type="password" placeholder="GitHub Personal Access Token (scope: gist)" value="">';
+
+  if (token) {
+    // Token già configurato — mostra badge e pulsante per cambiarlo
+    h += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:10px 12px;background:#0d1f0d;border:1px solid #1a4a1a;border-radius:10px">';
+    h += '<span style="font-size:18px">🔑</span>';
+    h += '<div style="flex:1"><div style="font-size:13px;color:#4ade80;font-weight:700">Token configurato ✅</div>';
+    if (lastSyncLabel) h += '<div style="font-size:11px;color:#555;margin-top:2px">Ultimo sync: ' + lastSyncLabel + '</div>';
+    h += '</div>';
+    h += '<button onclick="document.getElementById(\'sync-token-row\').style.display=\'block\';this.style.display=\'none\'" style="background:none;border:1px solid #333;color:#666;border-radius:6px;padding:4px 9px;font-size:11px;cursor:pointer">Cambia</button>';
+    h += '</div>';
+    h += '<div id="sync-token-row" style="display:none">';
+    h += '<input class="sync-input" id="sync-token" type="password" placeholder="Nuovo token GitHub" style="margin-bottom:6px">';
+    h += '</div>';
+  } else {
+    // Prima configurazione
+    h += '<div style="font-size:12px;color:#666;margin-bottom:8px;padding:10px;background:#111;border-radius:8px;border:1px solid #222">📋 <b>Prima configurazione:</b> apri il file <code style="color:#7ec8ff">Downloads/.evianboxe_config</code> con TextEdit, copia il valore dopo <code style="color:#7ec8ff">GITHUB_TOKEN=</code> e incollalo qui sotto. Lo ricorderà per sempre.</div>';
+    h += '<input class="sync-input" id="sync-token" type="password" placeholder="Incolla qui il GitHub Personal Access Token">';
+  }
+
   h += '<div class="sync-row">';
   h += '<button class="sync-btn sync-btn-push" onclick="syncGistPush()">⬆️ Salva su Gist</button>';
   h += '<button class="sync-btn sync-btn-pull" onclick="syncGistPull()">⬇️ Ripristina da Gist</button>';
   h += '</div>';
   if (gistId) {
-    h += '<div class="sync-status" id="sync-status">Gist configurato: ' + gistId.slice(0,12) + '... &nbsp;<a href="https://gist.github.com/' + gistId + '" target="_blank" style="color:var(--acc)">apri</a></div>';
+    h += '<div class="sync-status" id="sync-status">Gist: ' + gistId.slice(0,12) + '… &nbsp;<a href="https://gist.github.com/' + gistId + '" target="_blank" style="color:var(--acc)">apri ↗</a></div>';
   } else {
-    h += '<div class="sync-status" id="sync-status">Nessun Gist configurato — inserisci il token e salva</div>';
+    h += '<div class="sync-status" id="sync-status">Nessun Gist ancora — inserisci il token e premi "Salva su Gist"</div>';
   }
   h += '</div>';
   h += '<div class="notif-section">';
@@ -8490,10 +8510,10 @@ function renderAthSync() {
   var granted = (typeof Notification !== 'undefined' && Notification.permission === 'granted');
   h += '<button class="notif-btn' + (granted ? ' granted' : '') + '" id="notif-btn" onclick="requestNotifPermission()">' + (granted ? '✅ Notifiche attive' : '🔔 Attiva notifiche') + '</button>';
   h += '</div>';
-  // Restore token in input after render
+  // Pre-fill token in hidden row if needed
   setTimeout(function() {
     var inp = document.getElementById('sync-token');
-    if (inp) {
+    if (inp && !inp.value) {
       var t = localStorage.getItem('evian_gist_token') || '';
       if (t) inp.value = t;
     }
@@ -8508,8 +8528,9 @@ function _syncSetStatus(msg) {
 
 function syncGistPush() {
   var tokenEl = document.getElementById('sync-token');
-  var token = tokenEl ? tokenEl.value.trim() : '';
-  if (!token) { alert('Inserisci il token GitHub'); return; }
+  // Usa il token dal campo (se visibile) o quello già salvato in localStorage
+  var token = (tokenEl && tokenEl.value.trim()) ? tokenEl.value.trim() : (localStorage.getItem('evian_gist_token') || '');
+  if (!token) { alert('Inserisci il token GitHub nella scheda ☁️ Sync'); return; }
   localStorage.setItem('evian_gist_token', token);
   _syncSetStatus('⏳ Caricamento in corso...');
   var gistId = localStorage.getItem('evian_gist_id');
