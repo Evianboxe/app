@@ -1601,25 +1601,28 @@ const DB = {
 */
 const SCHED = {
   /* LUN: [esplosività, spinta orizz, hinge, tirata] */
+  /* S3-S4: focus BALISTICO + DIMAGRIMENTO (Open di Braga) */
   lun: {
-    1: ['med-ball-slam',    'pushup',               'kb-swing',          'prone-row'],
-    2: ['tuck-jump',        'pushup-wide',           'rdl-kb',            'inverted-row'],
-    3: ['broad-jump',       'kb-floor-press',        'single-leg-hip-thrust', 'renegade-row'],
-    4: ['jumping-lunge',    'pushup-diamond',        'hip-thrust-disco',  'kb-row'],
+    1: ['med-ball-slam',      'pushup',            'kb-swing',              'prone-row'],
+    2: ['tuck-jump',          'pushup-wide',       'rdl-kb',                'inverted-row'],
+    3: ['med-ball-slam',      'burpee',            'kb-swing',              'mountain-climber'],
+    4: ['mb-rotational-slam', 'jumping-lunge',     'kb-swing',              'mountain-climber'],
   },
   /* MER: [squat, core, hinge, spinta vert] */
+  /* S3-S4: focus BALISTICO + DIMAGRIMENTO (Open di Braga) */
   mer: {
-    1: ['goblet-squat',          'russian-twist',   'single-leg-rdl',    'pushup-diamond'],
-    2: ['bulgarian',             'mountain-climber', 'kb-swing',          'pushup-decline-steep'],
-    3: ['lateral-squat',         'side-plank',       'rdl-kb',            'pike-pushup'],
-    4: ['kb-goblet-squat-pause', 'v-up',             'hip-thrust-disco',  'pike-pushup-step'],
+    1: ['goblet-squat',           'russian-twist',    'single-leg-rdl',    'pushup-diamond'],
+    2: ['bulgarian',              'mountain-climber', 'kb-swing',          'pushup-decline-steep'],
+    3: ['split-squat-jump',       'mountain-climber', 'kb-swing',          'burpee'],
+    4: ['tuck-jump',              'mountain-climber', 'kb-swing',          'pike-pushup-step'],
   },
   /* VEN: [esplosività, squat/lower, tirata, core] */
+  /* S3-S4: focus BALISTICO + DIMAGRIMENTO (Open di Braga) */
   ven: {
-    1: ['split-squat-jump',    'step-up',       'kb-row',        'dead-bug'],
-    2: ['mb-rotational-slam',  'reverse-lunge', 'inverted-row',  'leg-raise'],
-    3: ['squat-jump',          'lateral-squat', 'renegade-row',  'hollow-body'],
-    4: ['archer-pushup',       'sumo-squat',    'prone-row',     'mountain-climber'],
+    1: ['split-squat-jump',   'step-up',          'kb-row',        'dead-bug'],
+    2: ['mb-rotational-slam', 'reverse-lunge',    'inverted-row',  'leg-raise'],
+    3: ['med-ball-slam',      'split-squat-jump', 'prone-row',     'mountain-climber'],
+    4: ['mb-rotational-slam', 'jumping-lunge',    'inverted-row',  'mountain-climber'],
   }
 };
 
@@ -5668,6 +5671,76 @@ function ptText(s) {
     ['ogni','cada'],['Ogni','Cada'],
     ['prima','antes'],
     ['dopo','depois'],
+    // ── Note esercizi circuito ──
+    // Frasi complete (prima delle parole singole)
+    ['Nessuna preparazione','Sem preparação'],
+    ['in tripla flessione','em tripla flexão'],
+    ['ciclo stiramento-accorciamento','ciclo alongamento-encurtamento'],
+    ['catena cinetica','cadeia cinética'],
+    ['Non ogni segnale è vero','Nem todo o sinal é verdadeiro'],
+    ['Leggi il contesto','Lê o contexto'],
+    ['fermarsi per pensare','parar para pensar'],
+    ['da lato a lato','de lado a lado'],
+    ['Piedi larghezza spalle','Pés à largura dos ombros'],
+    ['piedi larghezza spalle','pés à largura dos ombros'],
+    ['alternare i lati','alternar os lados'],
+    ['Alternare i lati','Alternar os lados'],
+    ['toccando il suolo','tocando o chão'],
+    ['verso il petto','para o peito'],
+    ['in posizione di partenza','na posição de partida'],
+    ['presa alta','pegada alta'],
+    ['con le mani','com as mãos'],
+    ['con le braccia','com os braços'],
+    ['Guarda il segnale','Olha para o sinal'],
+    ['L\'errore è','O erro é'],
+    ['Muoviti E rispondi','Move-te E responde'],
+    ['sullo step','no step'],
+    ['a terra','no chão'],
+    ['in aria','no ar'],
+    ['in fondo','no fundo'],
+    // Parole singole mancanti
+    ['atterraggio','aterragem'],
+    ['morbido','suave'],['morbida','suave'],
+    ['decollo','impulso'],
+    ['flessione','flexão'],['flessioni','flexões'],
+    ['slancio','balanço'],['Slancio','Balanço'],
+    ['presa','pegada'],
+    ['contrazione','contração'],['Contrazione','Contração'],
+    ['contratti','contraídos'],['contratta','contraída'],['contratto','contraído'],
+    ['braccia','braços'],['braccio','braço'],
+    ['spalla','ombro'],
+    ['piatta','plana'],['piatto','plano'],
+    ['Partenza','Partida'],['partenza','partida'],
+    ['gambe','pernas'],['gamba','perna'],
+    ['scambio','troca'],
+    ['posizione','posição'],
+    ['opposta','oposta'],['opposto','oposto'],
+    ['busto','tronco'],
+    ['testa','cabeça'],
+    ['sopra','acima'],
+    ['lati','lados'],['lato','lado'],
+    ['stabili','estáveis'],['stabile','estável'],
+    ['veloce','rápido'],['veloci','rápidos'],
+    ['rigido','rígido'],['rigida','rígida'],
+    ['invece','em vez'],
+    ['catena','cadeia'],
+    ['suolo','chão'],
+    ['spinta','impulso'],
+    ['alternando','alternando'],
+    ['replica','replica'],['Replica','Replica'],
+    ['vero','verdadeiro'],['vera','verdadeira'],
+    ['segnale','sinal'],
+    ['gamba','perna'],
+    ['rigidità','rigidez'],
+    ['talloне','calcanhar'],['tallone','calcanhar'],['talloni','calcanhares'],
+    ['anche','ancas'],
+    ['anca','anca'],
+    ['cima','topo'],
+    ['esteso','estendido'],['estesa','estendida'],
+    ['estendi','estende'],['estendere','estender'],
+    ['appoggio','apoio'],
+    ['salita','subida'],
+    ['pronto','pronto'],
   ];
   var r = s;
   pairs.forEach(function(p){ r = r.split(p[0]).join(p[1]); });
@@ -5765,7 +5838,7 @@ function generateCircuitPDF(dayKey, shareMode) {
     if (paradigm[3] && paradigm[3].cue) {
       chk(10);
       doc.setFontSize(8); doc.setFont('helvetica', 'italic'); doc.setTextColor(RED[0], RED[1], RED[2]);
-      var cueLines = doc.splitTextToSize('G4: ' + paradigm[3].cue, cw - 4);
+      var cueLines = doc.splitTextToSize('G4: ' + ptText(paradigm[3].cue), cw - 4);
       cueLines.forEach(function(l){ chk(5); doc.text(l, margin+2, y); y+=4.5; });
       doc.setTextColor(0,0,0); doc.setFont('helvetica', 'normal');
     }
@@ -5811,7 +5884,7 @@ function generateCircuitPDF(dayKey, shareMode) {
     // Note
     if (ex.note) {
       doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(80,80,80);
-      var noteLines = doc.splitTextToSize(ex.note, cw - 6);
+      var noteLines = doc.splitTextToSize(ptText(ex.note), cw - 6);
       noteLines.forEach(function(l){ chk(5); doc.text(l, margin+4, y); y+=4.5; });
     }
     y += 4;
